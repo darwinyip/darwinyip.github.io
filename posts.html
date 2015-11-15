@@ -1,0 +1,15 @@
+---
+layout: default
+title: Posts
+---
+<title>{{ page.title }}</title>
+<h2>Post Index</h2>
+<div class="post-index">
+	<ul>
+		{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string}}
+			</li>
+		{% endfor %}
+	</ul>
+</div>

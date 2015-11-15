@@ -1,28 +1,16 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Food Reviews</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<div id="menu">
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="reviews.html">Reviews</a></li>
-		</ul>
-	</div>
-	<h1>Concise Reviews</h1>
-</head>
-<body>
-	<div id="reviews">
-		<ul>
-			<li>Peter Luger: Just a regular steak. Otherworldly bacon. Enjoyable environment.</li>
-			<li>Kobeyaki: Okay meat. Boring in general. Fast food.</li>
-			<li>Futago: Delicious meat. Horrible ramen. Enjoyable avocado. Priced too aggressively. Great customer service.</li>
-			<li>Meson Sevilla: Good paellas. Good atmosphere.</li>
-			<li>Go Go Curry: Go if indecisive the next meal.</li>
-			<li>Menkui Tei: Ramen and beer combination that hits the right spot.</li>
-			<li>Ippudo: Overhyped.</li>
-			<li>Totto Ramen: Over-hyped. Delicious buns.</li>
-		</ul>
-	</div>
-</body>
-</html>
+---
+layout: default
+title: Food Reviews
+---
+<title>{{ page.title }}</title>
+<h2>Concise Reviews</h2>
+<div class="reviews">
+	<ul>
+	  {% for review in site.reviews %}
+	    <li>
+	      	<div class="title">{{ review.title }}</div>
+	      	<div class="content">{{ review.content | remove: '<p>' | remove: '</p>'}}</div>
+	    </li>
+	  {% endfor %}
+	</ul>
+</div>

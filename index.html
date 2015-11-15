@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-	<!--Please ignore the ugliness-->
-<head>
-	<meta charset="UTF-8">
-	<title>Always under construction</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<div id="menu">
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="reviews.html">Reviews</a></li>
-		</ul>
-	</div>
-</head>
-<body>
+---
+layout: default
+title: Always under construction
+---
+<title>{{ page.title }}</title>
+<h2>Welcome!</h2>
 
-	<p>Hi</p>
-</body>
-</html>
-
-
+{% for post in site.posts %}
+<div class="paragraph">
+<ul>
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string}}
+      {{ post.excerpt }}
+    </li>
+</ul>
+</div>
+{% endfor %}
