@@ -2,6 +2,11 @@
 	font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
 }
 
+a {
+    text-decoration: none;		
+	color: purple;
+}
+
 /*.menu {
 	background-color: grey;
 }*/
@@ -17,13 +22,18 @@
 }
 
 .menu a {
-    text-decoration: none;
     display: inline-block;
 	font-weight: bold;
 	background-color: lightgrey;
 	border: 2px solid grey;
 	margin: 2px;
 	padding: 5px;
+
+}
+
+.menu a:hover {
+	color: white;
+	background: #444;
 }
 
 h2 {
@@ -64,7 +74,6 @@ h2 {
 }
 
 .paragraph a {
-	text-decoration: none;
 	font-weight: bold;
 	font-size: 25px;
 }
@@ -96,6 +105,7 @@ h2 {
 
 .reviews .title {
 	font-weight: bold;
+	color: purple;
 }
 
 .reviews .content {
