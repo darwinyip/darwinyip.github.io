@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Todo List</title>
+    </head>
+    <body>
+        <h1 id="h2">Todo List</h1>
+        <input type="text" id="text">
+        <button type="button" onclick=l.appendItem()>Add to list</button>
+        <button type="button" onclick=save()>Save</button>
+        <button type="button" onclick=load()>Load</button>
+        <ul id="ul">
+        </ul>
+        <script>
+            //TODO: Separate View-Controller
+            class TodoList {
+
+                constructor() {
+                    this.todoCount = 0;
+                }
+
+                updateCount(element) {
+                    if(element.checked) {
+                        this.todoCount--;
+                    }
+                    else {
+                        this.todoCount++;
+                    }
+                    document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
+                }
+
+                deleteItem(item) {
+                    if(!item.childNodes[1].checked) {
+                        this.todoCount--;
+                        document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
+                    }
+                    item.parentNode.removeChild(item);
+                }
+
+                createItem(text) {
+                    let item = document.createElement("li");
+                    let textbox = document.createElement("input");
+                    let check = document.createElement("input");
+                    let deletebutton = document.createElement("button");
+
+                    textbox.setAttribute("type", "text");
+                    textbox.setAttribute("value", text);
+
+                    check.setAttribute("type", "checkbox");
+                    check.onchange = this.updateCount.bind(this, check);
+
+                    deletebutton.innerHTML = "X";
+                    deletebutton.onclick = this.deleteItem.bind(this, item);
+
+                    item.appendChild(textbox);
+                    item.appendChild(check);
+                    item.appendChild(deletebutton);
+                    
+                    return item;
+                }
+
+                appendItem() {
+                    let form = document.getElementById("text");
+                    if(form.value) {
+                        let item = this.createItem(form.value);
+                        document.getElementById("ul").append(item);
+                        this.todoCount++;
+                        document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
+                    }
+                    form.value = "";
+                }
+            }
+
+            let l = new TodoList();
+
+            function save() {
+                let ul = document.getElementById("ul");
+                let list = {};
+                for(i = 1; i < ul.childNodes.length; i++) {
+                    if(ul.childNodes.nodeName != "#text") {
+                        list[i-1] = ul.childNodes[i].childNodes[0].value;
+                    }
+                }
+                localStorage["TodoList"] = JSON.stringify(list);
+            }
+
+            function load() {
+                let ul = document.getElementById("ul");
+                let list = Object.values(JSON.parse(localStorage["TodoList"]));
+                for(i = 0; i < list.length; i++) {
+                    let item = l.createItem(list[i]);
+                    ul.append(item);
+                    l.todoCount++;
+                    document.getElementById("h1").textContent = "Todo List (" + l.todoCount + ")";
+                }
+            }
+        </script>
+    </body>
+</html>
