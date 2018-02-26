@@ -8,4 +8,4 @@ Quizoology is an Android app which I built for my final project for Udacity's Gr
 
 Moving along, the goal of this project is to create an app from concept to final product. In here I utilize everything I have learned plus a sprinkle of my own creativity to make the most exciting quiz app about animals currently in the market.
 
-Check it out at https://github.com/darwinyip/Quizoology
+Check it out at [https://github.com/darwinyip/Quizoology](https://github.com/darwinyip/Quizoology)

@@ -10,4 +10,4 @@ The code currently lacks proper structuring which makes tracking logic and View 
 
 I learned a lot making Tennis Game Tracker and definitely made me understand my limitations in knowledge and experience. It was a fun experience building this and will continue on improving it.
 
-Check it out at https://github.com/darwinyip/TennisGameTracker
+Check it out at [https://github.com/darwinyip/TennisGameTracker](https://github.com/darwinyip/TennisGameTracker)
