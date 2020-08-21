@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/style.css">
+		<title>Todo List</title>
+	</head>
+	<body>
 		<div class="menu">
 	<ul>
 		<li><a href="/index.html">Home</a></li>
@@ -12,9 +15,7 @@
 		<li><a href="/todolist.html">Todo List</a></li>
 	</ul>
 </div>
-	</head>
-	<body>
-		<h2 id="h2">Todo List</h2>
+		<h1 id="h1">Todo List</h1>
 <input type="text" id="text">
 <button type="button" onclick=l.appendItem()>Add to list</button>
 <button type="button" onclick=save()>Save</button>
@@ -35,13 +36,13 @@
             else {
                 this.todoCount++;
             }
-            document.getElementById("h2").textContent = "Todo List (" + this.todoCount + ")";
+            document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
         }
 
         deleteItem(item) {
             if(!item.childNodes[1].checked) {
                 this.todoCount--;
-                document.getElementById("h2").textContent = "Todo List (" + this.todoCount + ")";
+                document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
             }
             item.parentNode.removeChild(item);
         }
@@ -74,7 +75,7 @@
                 let item = this.createItem(form.value);
                 document.getElementById("ul").append(item);
                 this.todoCount++;
-                document.getElementById("h2").textContent = "Todo List (" + this.todoCount + ")";
+                document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
             }
             form.value = "";
         }
@@ -100,7 +101,7 @@
             let item = l.createItem(list[i]);
             ul.append(item);
             l.todoCount++;
-            document.getElementById("h2").textContent = "Todo List (" + l.todoCount + ")";
+            document.getElementById("h1").textContent = "Todo List (" + l.todoCount + ")";
         }
     }
 </script>

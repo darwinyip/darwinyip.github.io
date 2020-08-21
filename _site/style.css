@@ -1,115 +1,118 @@
-@import "fruity.css";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
 
 * {
-	font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;		
-	color: purple;
+    text-decoration: none;      
+    color: purple;
 }
 
-/*.menu {
-	background-color: grey;
-}*/
+p {
+    text-indent: 20px
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    margin-bottom: 15px;
+}
 
 .menu ul {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
 }
 
 .menu li {
-	list-style-position:inside;
-	display: inline-block;
+    padding: 2px;
 }
 
 .menu a {
     display: inline-block;
-	font-weight: bold;
-	background-color: lightgrey;
-	border: 2px solid grey;
-	margin: 2px;
-	padding: 5px;
+    font-weight: bold;
+    background-color: lightgrey;
+    border: 2px solid grey;
+    margin: 2px;
+    padding: 5px;
 
 }
 
 .menu a:hover {
-	color: white;
-	background: #444;
+    color: white;
+    background: #444;
 }
 
-h2 {
-	color: purple;
-	margin-bottom: 5px;
-	width: auto;
-	text-indent: 20px;
+
+h1 {
+    color: purple;
+    margin-bottom: 5px;
+    width: auto;
+    text-indent: 20px;
+}
+
+article {
+    margin-left: 3%;
+    border: 2px dotted grey;
+    padding: 20px;
+    display: flex;
+    width: 55%;
+    background-color: ghostwhite;
+    flex-direction: column;
+}
+
+article > .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+article > p, ol {
+    margin: 0 0 10px 0;
+    line-height: 1.3em;
+    list-style-position: inside;
 }
 
 .date {
-	display: inline-block;
-	color: purple;
-	text-indent: 20px;
-}
-
-.paragraph {
-	margin-left: 3%;
-	border: 2px dotted grey;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	display: block;
-	width: 55%;
-	background-color: ghostwhite;
-	text-align: justify;
-    text-justify: auto;
-}
-
-.paragraph ul {
-    margin: 0;
-    padding: 20px 0 0 0;
-}
-
-.paragraph li{
-	list-style-position:inside;
-	/*display: inline-block;	*/
-}
-
-.paragraph a {
-	font-weight: bold;
-	font-size: 25px;
+    color: purple;
+    text-indent: 20px;
 }
 
 .post-index {
-	margin-left: 3%;
-	margin-top: 20px;
-	border: 2px dotted grey;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	display: block;
-	width: 55%;
-	background-color: ghostwhite;
-	text-align: justify;
+    margin-left: 3%;
+    margin-top: 20px;
+    border: 2px dotted grey;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: block;
+    width: 55%;
+    background-color: ghostwhite;
+    text-align: justify;
     text-justify: auto;
 }
 
 .reviews li{
-	list-style-position:inside;
-	margin: 2px;
-	border: 2px dotted grey;
-	display: block;
-	width: 60%;
-	height: auto;
-	background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    list-style-position:inside;
+    margin: 0 30px;
+    border: 2px dotted grey;
+    display: block;
+    width: 60%;
+    height: auto;
+    background-color: ghostwhite;
 }
 
 .reviews .title {
-	font-weight: bold;
-	color: purple;
-}
-
-.reviews .content {
-	color: dark-grey;
+    font-weight: bold;
+    color: purple;
 }

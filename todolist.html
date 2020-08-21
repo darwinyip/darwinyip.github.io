@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Food Reviews
+title: Todo List
 ---
-<h2 id="h2">Todo List</h2>
+<h1 id="h1">Todo List</h1>
 <input type="text" id="text">
 <button type="button" onclick=l.appendItem()>Add to list</button>
 <button type="button" onclick=save()>Save</button>
@@ -23,13 +23,13 @@ title: Food Reviews
             else {
                 this.todoCount++;
             }
-            document.getElementById("h2").textContent = "Todo List (" + this.todoCount + ")";
+            document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
         }
 
         deleteItem(item) {
             if(!item.childNodes[1].checked) {
                 this.todoCount--;
-                document.getElementById("h2").textContent = "Todo List (" + this.todoCount + ")";
+                document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
             }
             item.parentNode.removeChild(item);
         }
@@ -62,7 +62,7 @@ title: Food Reviews
                 let item = this.createItem(form.value);
                 document.getElementById("ul").append(item);
                 this.todoCount++;
-                document.getElementById("h2").textContent = "Todo List (" + this.todoCount + ")";
+                document.getElementById("h1").textContent = "Todo List (" + this.todoCount + ")";
             }
             form.value = "";
         }
@@ -88,7 +88,7 @@ title: Food Reviews
             let item = l.createItem(list[i]);
             ul.append(item);
             l.todoCount++;
-            document.getElementById("h2").textContent = "Todo List (" + l.todoCount + ")";
+            document.getElementById("h1").textContent = "Todo List (" + l.todoCount + ")";
         }
     }
 </script>

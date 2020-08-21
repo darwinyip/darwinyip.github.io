@@ -2,16 +2,15 @@
 layout: default
 title: Always under construction
 ---
-<title>{{ page.title }}</title>
-<h2>Welcome!</h2>
+<h1>Welcome!</h1>
 
 {% for post in site.posts %}
-<div class="paragraph">
-<ul>
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string}}
-      {{ post.excerpt }}
-    </li>
-</ul>
-</div>
+<article>
+	<div class="header">
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<div class="date"> - {{ post.date | date_to_string}}</div>
+	</div>
+	<p>{{ post.excerpt }}</p>
+</article>
+
 {% endfor %}
